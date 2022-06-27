@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components"
 import { createGlobalStyle } from "styled-components"
 import logo from "./assets/images/logo.png"
+import PaginaContratar from "./Pages/PaginaContratar";
 
 const GlobalStyle = createGlobalStyle`
     body{
@@ -33,12 +34,12 @@ export default class App extends React.Component {
     return (
       <Container>
         <GlobalStyle/>
-        
         <Header>
           <Logo>
             <img src={logo} alt="logo"/>
           </Logo>
         </Header>
+        <PaginaContratar/>
       </Container>
     )
   }
