@@ -18,7 +18,7 @@ const Container = styled.div`
 `
 const Header = styled.div`
   background-color:#F5F4FC;
-  border:1px solid black;
+  /* border:1px solid black; */
   height:80px;
   padding:10px;
   
