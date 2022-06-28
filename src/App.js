@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components"
-import { createGlobalStyle } from "styled-components"
-import logo from "./assets/pages/images/logo.png"
 import Home from "./assets/pages/Home"
 import Carrinho from "./Pages/Carrinho";
 import Cadastro from "./components/cadastro/index";
