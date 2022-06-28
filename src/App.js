@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components"
 import { createGlobalStyle } from "styled-components"
 import logo from "./assets/images/logo.png"
+import Carrinho from "./pages/Carrinho";
 
 const GlobalStyle = createGlobalStyle`
     body{
     margin:0px;
     padding:0px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:white;
   }
 `
 const Container = styled.div`
@@ -20,6 +20,8 @@ const Header = styled.div`
   border:1px solid black;
   height:80px;
   padding:10px;
+  display:flex;
+  justify-content: space-between;
 `
 const Logo = styled.div`
   img{
@@ -27,8 +29,36 @@ const Logo = styled.div`
     margin-left:50px;
   }
 `
+const ButtonArea = styled.div`
+  height:80px;
+  margin-right:50px;
+  display:flex;
+  align-items: center;
+`
 
 export default class App extends React.Component {
+  state = {
+    paginaAtual: "home"
+  }
+
+  trocarPagina = () => {
+    switch(this.state.paginaAtual){
+      case "home":
+        return <div>Home...</div>
+      case "carrinho":
+        return <Carrinho voltar={this.onClickHome}/>
+      default:
+        return <div>Home...</div>
+    }
+  }
+
+  onClickHome = () => {
+    this.setState({paginaAtual: "home"})
+  }
+  
+  onClickCarrinho = () => {
+    this.setState({paginaAtual: "carrinho"})
+  }
   render(){
     return (
       <Container>
@@ -38,7 +68,12 @@ export default class App extends React.Component {
           <Logo>
             <img src={logo} alt="logo"/>
           </Logo>
+          <ButtonArea>
+            <button onClick={this.onClickHome}>Home</button>
+            <button onClick={this.onClickCarrinho}>Carrinho</button>
+          </ButtonArea>
         </Header>
+        {this.trocarPagina()}
       </Container>
     )
   }
