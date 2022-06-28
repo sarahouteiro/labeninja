@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components"
 import axios from "axios";
 import { createGlobalStyle } from "styled-components";
-import logo from '../assets/pages/images/logo.png'
+import logo from '../assets/images/logo.png'
 
 const ContainerCarrinho = styled.div`
   margin:0px;
@@ -94,7 +94,7 @@ export default class Carrinho extends React.Component {
         })
         return (
             <Container>
-                <GlobalStyle />
+                
                 <Header>
                     <Logo>
                         <img src={logo} alt="logo" />

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components"
 import { createGlobalStyle } from 'styled-components';
-import logo from '../assets/pages/images/logo.png'
+import logo from '../assets/images/logo.png'
 
 const ContainerPage = styled.div`
   display: flex;
@@ -74,7 +74,7 @@ export default class ComponentForm extends React.Component {
     render() {
         return (
             <Container>
-        <GlobalStyle />
+        
         <Header>
           <Logo>
             <img src={logo} alt="logo" />            

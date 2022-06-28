@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import CardServico from "../components/CardServico";
 import { createGlobalStyle } from "styled-components";
-import logo from "../assets/pages/images/logo.png" 
+import logo from "../assets/images/logo.png" 
 
 const Contratar = styled.div`
     color: black;
@@ -79,7 +79,7 @@ export default class PaginaContratar extends React.Component {
     render() {
         return(
             <Container>
-        <GlobalStyle />
+        
         <Header>
           <Logo>
             <img src={logo} alt="logo" />

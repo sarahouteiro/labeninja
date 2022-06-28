@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components"
 import { createGlobalStyle } from "styled-components"
-import logo from "./images/logo.png"
+import logo from "../images/logo.png"
 
 
 const GlobalStyle = createGlobalStyle`
@@ -58,7 +58,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <Container>
-        <GlobalStyle />
+        
         <Header>
           <Logo>
             <img src={logo} alt="logo" />

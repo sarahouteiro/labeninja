@@ -2,9 +2,20 @@ import React from "react";
 import styled from "styled-components"
 import Home from "./assets/pages/Home"
 import Carrinho from "./Pages/Carrinho";
-import Cadastro from "./components/cadastro/index";
 import PaginaContratar from "./Pages/PaginaContratar";
 import ComponentForm from "./components/RegistrationPage";
+import DetalheProduto from "./Pages/detalhesProduto";
+import { createGlobalStyle } from "styled-components";
+
+
+const GlobalStyle = createGlobalStyle`
+    body{
+    margin:0px;
+    padding:0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:white;    
+  }
+`
 
 
 export default class App extends React.Component {
@@ -30,9 +41,15 @@ export default class App extends React.Component {
   // onClickCarrinho = () => {
   //   this.setState({paginaAtual: "carrinho"})
   // }
+
+
   render(){
     return (
-      <Carrinho/>
+      <div>
+        <GlobalStyle />
+      <ComponentForm/>
+      </div>
+      
     )
   }
 }
