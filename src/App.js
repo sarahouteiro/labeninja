@@ -1,17 +1,16 @@
 import React from "react";
-import styled from "styled-components"
-import { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle }  from "styled-components"
 import logo from "./assets/images/logo.png"
-import Home from "./assets/pages/Home"
-import Carrinho from "./pages/Carrinho";
-import Cadastro from "./components/cadastro";
+import Home from "./Pages/Home"
+import Carrinho from "./Pages/Carrinho";
+import DetalheProduto from "./Pages/detalhesProduto";
 
 const GlobalStyle = createGlobalStyle`
     body{
     margin:0px;
     padding:0px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:white;
+    color: #0e0e0e;
     box-sizing: border-box;
 
   }
@@ -43,15 +42,25 @@ const ButtonArea = styled.div`
 
 export default class App extends React.Component {
   state = {
-    paginaAtual: "home"
+    paginaAtual: "home",
+    produto: {
+      id: 1,
+      titulo: "Pasteis",
+      formasPagamento: ["Paypal","Boleto"],
+      preco: 100,
+      prazo: "15/06/1997",
+      descricao: "blablabla" 
+    }
   }
 
   trocarPagina = () => {
     switch(this.state.paginaAtual){
       case "home":
-        return <div>Home...</div>
+        return <Home/>
       case "carrinho":
         return <Carrinho voltar={this.onClickHome}/>
+      case "detalhes": 
+        return <DetalheProduto voltar={this.onClickHome} produto={this.state.produto}/>
       default:
         return <div>Home...</div>
     }
@@ -78,10 +87,7 @@ export default class App extends React.Component {
           </ButtonArea>
         </Header>
         {this.trocarPagina()}
-        <Cadastro/>
-
       </Container>
-
     )
   }
 }
