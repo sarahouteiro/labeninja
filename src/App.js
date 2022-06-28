@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components"
 import { createGlobalStyle } from "styled-components"
 import logo from "./assets/images/logo.png"
+import Cadastro from "./components/cadastro";
 
 const GlobalStyle = createGlobalStyle`
     body{
@@ -9,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
     padding:0px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:white;
+    box-sizing: border-box;
   }
 `
 const Container = styled.div`
@@ -39,6 +41,7 @@ export default class App extends React.Component {
             <img src={logo} alt="logo"/>
           </Logo>
         </Header>
+        <Cadastro/>
       </Container>
     )
   }
