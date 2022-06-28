@@ -2,13 +2,19 @@ import React from "react";
 import styled from "styled-components"
 import { createGlobalStyle } from "styled-components"
 import logo from "./assets/images/logo.png"
+
 import Carrinho from "./pages/Carrinho";
+import Cadastro from "./components/cadastro";
+
 
 const GlobalStyle = createGlobalStyle`
     body{
     margin:0px;
     padding:0px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:white;
+    box-sizing: border-box;
+
   }
 `
 const Container = styled.div`
@@ -63,7 +69,6 @@ export default class App extends React.Component {
     return (
       <Container>
         <GlobalStyle/>
-        
         <Header>
           <Logo>
             <img src={logo} alt="logo"/>
@@ -74,6 +79,8 @@ export default class App extends React.Component {
           </ButtonArea>
         </Header>
         {this.trocarPagina()}
+        <Cadastro/>
+
       </Container>
     )
   }
