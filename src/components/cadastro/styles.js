@@ -15,7 +15,7 @@ export const CadastroContainer = styled.main `
         justify-content: center;
         align-items: center;
 
-        input, select, button {
+        input, select, button, > div {
             width: 100%;
             max-width: 200px;
             margin: 0 0 20px;
