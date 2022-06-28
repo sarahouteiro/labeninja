@@ -2,10 +2,9 @@ import React from "react";
 import styled from "styled-components"
 import { createGlobalStyle } from "styled-components"
 import logo from "./assets/images/logo.png"
-
+import Home from "./assets/pages/Home"
 import Carrinho from "./pages/Carrinho";
 import Cadastro from "./components/cadastro";
-
 
 const GlobalStyle = createGlobalStyle`
     body{
@@ -82,6 +81,7 @@ export default class App extends React.Component {
         <Cadastro/>
 
       </Container>
+
     )
   }
 }
