@@ -35,7 +35,6 @@ export default class App extends React.Component {
     return (
       <Container>
         <GlobalStyle/>
-        
         <Header>
           <Logo>
             <img src={logo} alt="logo"/>
