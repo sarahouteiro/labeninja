@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components"
 import { createGlobalStyle } from "styled-components"
 import logo from "./assets/images/logo.png"
-import ComponentForm from "./components/RegistrationPage";
 
 const GlobalStyle = createGlobalStyle`
     body{
@@ -39,7 +38,6 @@ export default class App extends React.Component {
             <img src={logo} alt="logo"/>
           </Logo>
         </Header>
-        <ComponentForm/>
       </Container>
     )
   }
