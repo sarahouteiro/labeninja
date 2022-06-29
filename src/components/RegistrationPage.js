@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from "styled-components"
 import { createGlobalStyle } from 'styled-components';
-import logo from '../assets/images/logo.png'
+import logo from '../assets/images/logo.png';
 import axios from 'axios'
+
 
 const ContainerPage = styled.div`
   display: flex;
