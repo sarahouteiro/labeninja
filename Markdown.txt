@@ -1,0 +1,13 @@
+Pagina cadastrar serviços. 
+Na mesma foi locado o titulo, descrição, preço, forma de pagamento e data.
+Adicionado também um botão para efetuar o cadastro.
+Elaboração junto aos pares da wireframe com o esboço bem definido de todo projeto.
+Página de Escolher o Trabalho:
+Até agora os inputs de filtragem foram feitos, juntamente com um grid que irá comportar o array de trabalhos disponíveis na plataforma que foram cadastrados previamente.
+Achei interessante começar pelo layout para depois fazer as funções e juntar com os outros layouts de páginas do site.
+Construção da página Home de inicio, com a finalidade de apresentação e acesso em outras duas páginas.
+Depois da construção de todas as páginas teve a resolução de conflitos no merge.
+E então foi feita a escolha do layout e paleta de cores para direcionamento do projeto.
+A divisão de tarefas do nosso projeto foi realizada de forma bem democrática, onde todos puderam escolher a parte do projeto que se sentiram mais confortáveis. Eu escolhi a parte de detalhes no projeto pois é uma nova experiência de código, um desafio . Ao começar a desenvolver o código, percebi que dependia da funcionalidade direta do código do meu coleguinha e para resolver esse problema mokei alguns dados para poder visualizar o meu trabalho.
+
+
