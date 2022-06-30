@@ -4,7 +4,7 @@ import Home from "./assets/pages/Home"
 import Carrinho from "./Pages/Carrinho";
 import PaginaContratar from "./Pages/PaginaContratar";
 import ComponentForm from "./components/RegistrationPage";
-import DetalheProduto from "./Pages/detalhesProduto";
+import DetalhesServico from "./Pages/detalhesServico";
 import { createGlobalStyle } from "styled-components";
 
 
@@ -19,9 +19,42 @@ const GlobalStyle = createGlobalStyle`
 
 
 export default class App extends React.Component {
-  // state = {
-  //   paginaAtual: "home"
-  // }
+  state = {
+    paginaAtual: "home",
+    carrinho: [],
+    servico: {
+      id: "ffffff",
+      titulo: "Vender Pastel",
+      preço: 100,
+      descricao: "blablabla",
+      formasDePagamento: [
+        "Paypal",
+        "Cartão de crédito",
+        "Cartão de débito",
+        "Pix",
+        "Boleto"
+      ]
+    }
+  }
+
+  handleAdicionarServicoAoCarrinho = () => {
+    const { servico, carrinho } = this.state;
+
+    const novoServico = {
+      id: servico.id,
+      titulo: servico.titulo,
+      preco: servico.preco,
+      prazo: servico.prazo,
+      descricao: servico.descricao,
+      formasDePagamento: servico.formasDePagamento
+    }
+
+    const novoCarrinho = [...carrinho, novoServico]
+
+    this.setState({
+      carrinho: novoCarrinho
+    })
+  }
 
   // trocarPagina = () => {
   //   switch(this.state.paginaAtual){
@@ -37,19 +70,19 @@ export default class App extends React.Component {
   // onClickHome = () => {
   //   this.setState({paginaAtual: "home"})
   // }
-  
+
   // onClickCarrinho = () => {
   //   this.setState({paginaAtual: "carrinho"})
   // }
 
 
-  render(){
+  render() {
     return (
       <div>
         <GlobalStyle />
-      <ComponentForm/>
+        <ComponentForm />
       </div>
-      
+
     )
   }
 }
