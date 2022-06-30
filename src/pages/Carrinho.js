@@ -1,8 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import axios from "axios";
-import logo2 from "../assets/images/logo2.png";
-import carrinho from "../assets/images/carrinho.png";
 
 const ContainerCarrinho = styled.div`
   margin: 0px;
@@ -48,43 +45,27 @@ const Button = styled.div`
 `;
 
 export default class Carrinho extends React.Component {
-  state = {
-    produtos: [],
-  };
-
-  componentDidMount() {
-    this.getJobById();
-  }
-
-  getJobById = () => {
-    const id = "0809bf0b-fbf0-422b-b54a-065f1e5df1d8";
-    axios
-      .get(`https://labeninjas.herokuapp.com/jobs/${id}`, {
-        headers: {
-          Authorization: "e2190c39-7930-4db4-870b-bed0e5e4b88e",
-        },
-      })
-      .then((res) => {
-        this.setState({ produtos: [res.data] });
-      })
-      .catch((err) => {
-        console.log(err.response);
-      });
-  };
 
   removerDoCarrinho = (id) => {
-    const novoCarrinho = this.state.produtos.filter((item) => {
-      return item.id !== id;
-    });
-    this.setState({ produtos: novoCarrinho });
+    const { removerDoCarrinho } = this.props
+    removerDoCarrinho(id)
   };
 
-  finalizarCompra = () => {
-    alert("Obrigada por comprar com a gente!");
-  };
+  handleGetTotal = () => {
+    const { carrinho } = this.props;
+
+    let total = 0
+
+    carrinho.map((servico) => {
+      return total += servico.price
+    })
+
+    return total.toFixed(2).replace(".", ",")
+  }
 
   render() {
-    const produto = this.state.produtos.map((p) => {
+    const { carrinho, finalizarCompra } = this.props
+    const produto = carrinho.map((p) => {
       return (
         <Produto key={p.id}>
           <div>{p.title}</div>
@@ -94,18 +75,13 @@ export default class Carrinho extends React.Component {
       );
     });
 
-    let total = 0;
-    this.state.produtos.forEach((item) => {
-      total += item.price;
-    });
-
     return (
       <Container>
         <ContainerCarrinho>
           {produto}
           <Total>
-            <span>{`Total: R$${total},00`}</span>
-            <Button onClick={this.finalizarCompra}>Finalizar Compra</Button>
+            <span>{`Total: R$${this.handleGetTotal()}`}</span>
+            <Button onClick={finalizarCompra}>Finalizar Compra</Button>
           </Total>
         </ContainerCarrinho>
       </Container>
