@@ -1,5 +1,5 @@
 import React from "react";
-import PaginaContratar from "./Pages/PaginaContratar";
+import PaginaContratar from "./Pages/PaginaContratar/PaginaContratar";
 import { createGlobalStyle } from "styled-components";
 
 
