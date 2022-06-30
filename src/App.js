@@ -118,6 +118,18 @@ export default class App extends React.Component {
     })
   }
 
+  handleFinalizarCompra = () => {
+    const { carrinho } = this.state;
+
+    if(carrinho.length === 0) return;
+    
+    this.setState({
+      carrinho: []
+    })
+
+    alert("Obrigada por comprar com a gente!");
+  }
+
   trocarPagina = () => {
     const { paginaAtual, servico, carrinho } = this.state
 
@@ -125,7 +137,7 @@ export default class App extends React.Component {
       case "home":
         return <Home registrar={this.onClickRegistrar} irPraLista={this.onClickLista} />
       case "carrinho":
-        return <Carrinho carrinho={carrinho} removerDoCarrinho={this.handleRemoverDoCarrinho}/>
+        return <Carrinho carrinho={carrinho} removerDoCarrinho={this.handleRemoverDoCarrinho} finalizarCompra={this.handleFinalizarCompra}/>
       case "detalhes":
         return <DetalhesServico carrinho={carrinho} getServicoAtualizado={this.handleGetServico} servico={servico} voltarLista={this.onClickLista} adicionarAoCarrinho={this.handleAdicionarServicoAoCarrinho} />
       case "lista":
@@ -154,7 +166,7 @@ export default class App extends React.Component {
   }
 
   onClickVerDetalhes = (servico) => {
-
+    console.log("entrei aqui")
     this.handleGetServico(servico.id)
 
     this.setState({
@@ -176,7 +188,7 @@ export default class App extends React.Component {
           </Logo>
           <Carr>
             {paginaAtual !== "carrinho" ? <div onClick={this.onClickCarrinho}>
-            <img src={carrinho} />
+            <img src={carrinho} alt="icone carrinho"/>
             </div> : <button onClick={this.onClickLista}>Voltar</button>}
           </Carr>
         </Header>
