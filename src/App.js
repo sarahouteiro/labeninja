@@ -68,7 +68,6 @@ export default class App extends React.Component {
   }
 
   handleGetServico = async (id) => {
-
     try {
       const response = await axios.get(`https://labeninjas.herokuapp.com/jobs/${id}`, {
         headers: {
