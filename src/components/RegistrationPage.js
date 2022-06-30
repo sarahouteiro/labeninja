@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from "styled-components"
-import { createGlobalStyle } from 'styled-components';
 import logo from '../assets/images/logo.png';
 import axios from 'axios'
-
 
 const ContainerPage = styled.div`
   display: flex;
@@ -13,14 +11,6 @@ const ContainerPage = styled.div`
   
 `
 
-const GlobalStyle = createGlobalStyle`
-    body{
-    margin:0px;
-    padding:0px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:white;    
-  }
-`
 const Container = styled.div`
   margin:0px;
 
@@ -48,6 +38,7 @@ const Logo = styled.div`
 
 const Text = styled.div`
     color: black;
+    margin-top: 40px;
 
 `
 const Form = styled.form`
