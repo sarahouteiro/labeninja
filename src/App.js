@@ -1,5 +1,7 @@
 import React from "react";
 import PaginaContratar from "./Pages/PaginaContratar/PaginaContratar";
+import RegistrationPage from "./components/RegistrationPage"
+import Carrinho from "./Pages/Carrinho"
 import { createGlobalStyle } from "styled-components";
 import ComponentForm from "./Pages/ComponentForm";
 import DetalhesServico from "./Pages/detalhesServico";
