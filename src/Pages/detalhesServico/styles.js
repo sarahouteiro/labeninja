@@ -53,4 +53,10 @@ export const DetalhesContainer = styled.div`
             background-color: rgb(84, 73, 133);
         }
     }
+
+    button.disabled {
+        background-color: gray;
+        color: #cccccc;
+        pointer-events: none;
+    }
 `

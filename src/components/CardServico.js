@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+
+
 const CardsServico = styled.div`
     margin-top: 50px;
     border: solid 1px black;
@@ -15,12 +17,15 @@ const CardsServico = styled.div`
 
 export default class CardServico extends React.Component {
     render() {
+
+        const { verDetalhes } = this.props
+        
         return(
             <CardsServico>
-                    <p>Nome: Fotógrafo</p>
-                    <p>Preço: R$ 750,00</p>
-                    <p>11/07/2022</p>
-                    <button>Ver Detalhes</button>
+                    <p>{this.props.jobInfos.title}</p>
+                    <p>R${this.props.jobInfos.price.toFixed(2)}</p>
+                    <p>{this.props.jobInfos.dueDate}</p>
+                    <button onClick={verDetalhes}>Ver Detalhes</button>
                     <button>Adicionar no Carrinho</button>
             </CardsServico>
         )
