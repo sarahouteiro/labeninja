@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import axios from "axios";
-import logo from "../assets/images/logo.png";
 import logo2 from "../assets/images/logo2.png";
 import carrinho from "../assets/images/carrinho.png";
 
@@ -27,48 +26,6 @@ const Produto = styled.div`
 
 const Container = styled.div`
   margin: 0px;
-`;
-const Header = styled.div`
-  background-color: #f5f4fc;
-  height: 80px;
-  display: flex;
-  justify-content: space-around;
-  user-select: none;
-`;
-const Logo = styled.div`
-  align-self: center;
-  display: flex;
-  align-items: center;
-  height: 50px;
-  padding:5px 10px;
-  :hover {
-    border-radius: 5px;
-    cursor: pointer;
-    background-color:#EEECF9;
-  }
-  img {
-    height: 50px;
-  }
-`;
-const LogoTitle = styled.div`
-  color: #7c65ab;
-  font-size: 22px;
-  margin-right: 5px;
-`;
-const Carr = styled.div`
-  align-self: center;
-  display: flex;
-  align-items: center;
-  height: 40px;
-  padding:10px;
-  :hover {
-    border-radius: 5px;
-    cursor: pointer;
-    background-color:#EEECF9;
-  }
-  img {
-    height: 40px;
-  }
 `;
 const Total = styled.div`
   display: flex;
@@ -144,15 +101,6 @@ export default class Carrinho extends React.Component {
 
     return (
       <Container>
-        <Header>
-          <Logo>
-            <img src={logo2} />
-            <LogoTitle>LabeNinja</LogoTitle>
-          </Logo>
-          <Carr>
-            <img src={carrinho} />
-          </Carr>
-        </Header>
         <ContainerCarrinho>
           {produto}
           <Total>
