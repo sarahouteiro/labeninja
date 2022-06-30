@@ -9,6 +9,7 @@ class DetalhesServico extends Component {
     }
     
     handleTrocarStatus = async (id, taken) => {
+
         const body = {
             taken: taken
         }
@@ -48,6 +49,10 @@ class DetalhesServico extends Component {
     handleAdicionarAoCarrinho = async () => {
         const {adicionarAoCarrinho, servico} = this.props
 
+        const confirmation = window.confirm("Quer adicionar esse serviço ao carrinho?");
+
+        if(!confirmation) return;
+        
         await this.handleTrocarStatus(servico.id, true)
 
         adicionarAoCarrinho()
