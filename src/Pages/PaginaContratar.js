@@ -109,10 +109,12 @@ export default class PaginaContratar extends React.Component {
     }
 
     if (this.state.filterMinValue !== '' && this.state.filterMaxValue !== '' && this.state.filterTitle === '') {
+      // eslint-disable-next-line
       const filtrarJobs = this.state.jobs.map((job) => {
         if (job.price >= Number(this.state.filterMinValue) && job.price <= Number(this.state.filterMaxValue)) {
           return <CardServico key={job.id} verDetalhes={() => this.handleSalvarServico(job)} jobInfos={job} />
         }
+
       })
       return filtrarJobs
     }
@@ -125,6 +127,7 @@ export default class PaginaContratar extends React.Component {
     }
 
     if (this.state.filterMinValue !== '' && this.state.filterMaxValue === '' && this.state.filterTitle !== '') {
+      // eslint-disable-next-line
       const filtrarTudo = this.state.jobs.map((job) => {
         if (job.price >= Number(this.state.filterMinValue) && job.title.includes(this.state.filterTitle)) {
           return <CardServico key={job.id} verDetalhes={() => this.handleSalvarServico(job)} jobInfos={job} />
@@ -134,6 +137,7 @@ export default class PaginaContratar extends React.Component {
     }
 
     if (this.state.filterMaxValue !== '' && this.state.filterMinValue === '' && this.state.filterTitle !== '') {
+      // eslint-disable-next-line
       const filtrarTudo = this.state.jobs.map((job) => {
         if (job.price <= Number(this.state.filterMaxValue) && job.title.includes(this.state.filterTitle)) {
           return <CardServico key={job.id} verDetalhes={() => this.handleSalvarServico(job)} jobInfos={job} />
@@ -143,6 +147,7 @@ export default class PaginaContratar extends React.Component {
     }
 
     if (this.state.filterMinValue.length > 0 && this.state.filterMaxValue.length > 0 && this.state.filterTitle.length > 0) {
+      // eslint-disable-next-line
       const filtrarTudo = this.state.jobs.map((job) => {
         if (job.price >= Number(this.state.filterMinValue) && job.price <= Number(this.state.filterMaxValue) && job.title.includes(this.state.filterTitle)) {
           return <CardServico key={job.id} verDetalhes={() => this.handleSalvarServico(job)} jobInfos={job} />

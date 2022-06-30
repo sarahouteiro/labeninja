@@ -3,9 +3,14 @@ import { DetalhesContainer } from './styles'
 import axios from 'axios';
 
 class DetalhesServico extends Component {
-    handleChangeStatus = async (id) => {
+    
+    componentDidMount() {
+        this.handleVerificarSeTemNoCarrinho()
+    }
+    
+    handleTrocarStatus = async (id, taken) => {
         const body = {
-            taken: true
+            taken: taken
         }
         
         await axios.post(`https://labeninjas.herokuapp.com/jobs/${id}`, body, {
@@ -13,6 +18,19 @@ class DetalhesServico extends Component {
                 Authorization: "e2190c39-7930-4db4-870b-bed0e5e4b88e"
             }
         })
+    }
+
+    handleVerificarSeTemNoCarrinho = () => {
+        const { carrinho, servico, getServicoAtualizado } = this.props
+
+        const servicoNoCarrinho = carrinho.find((item) => {
+            return item.id === servico.id
+        }) 
+
+        if(!servicoNoCarrinho || carrinho.length === 0){
+            this.handleTrocarStatus(servico.id, false)
+            getServicoAtualizado(servico.id)
+        }
     }
 
     handleRenderFormasDePagamento = () => {
@@ -27,13 +45,10 @@ class DetalhesServico extends Component {
         return `R$ ${price.toFixed(2).replace(".", ",")}`
     }
 
-    handleAdicionarAoCarrinho = (id) => {
-        const {adicionarAoCarrinho, getServicoAtualizado} = this.props
+    handleAdicionarAoCarrinho = async () => {
+        const {adicionarAoCarrinho, servico} = this.props
 
-        this.handleChangeStatus(id)
-
-        this.handleChangeStatus(id)
-        getServicoAtualizado(id)
+        await this.handleTrocarStatus(servico.id, true)
 
         adicionarAoCarrinho()
         
@@ -59,7 +74,7 @@ class DetalhesServico extends Component {
                 <p>Aceita: {this.handleRenderFormasDePagamento()}</p>
                 <p>Até {this.handleFormatarData(servico.dueDate)} por <b>{this.handleFormatarPreco(servico.price)}</b></p>
                 <p>{servico.description}</p>
-                <button className= {`${servico.taken ? "disabled" :""}`} onClick={() => this.handleAdicionarAoCarrinho(servico.id)} disabled={servico.taken}>Adicionar ao carinho</button>
+                <button className= {`${servico.taken ? "disabled" :""}`} onClick={() => this.handleAdicionarAoCarrinho()} disabled={servico.taken}>Adicionar ao carinho</button>
                 <button type='' onClick={voltarLista}>Voltar para lista</button>
             </DetalhesContainer>
         )

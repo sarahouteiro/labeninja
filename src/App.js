@@ -46,26 +46,8 @@ export default class App extends React.Component {
     servico: {}
   }
 
-  handleAdicionarServicoAoCarrinho = () => {
-    const { servico, carrinho } = this.state;
-
-    const novoServico = {
-      id: servico.id,
-      titulo: servico.titulo,
-      preco: servico.preco,
-      prazo: servico.prazo,
-      descricao: servico.descricao,
-      formasDePagamento: servico.formasDePagamento
-    }
-
-    const novoCarrinho = [...carrinho, novoServico]
-
-    this.setState({
-      carrinho: novoCarrinho
-    })
-  }
-
   handleGetServico = async (id) => {
+
     const response = await axios.get(`https://labeninjas.herokuapp.com/jobs/${id}`, {
       headers: {
         Authorization: "e2190c39-7930-4db4-870b-bed0e5e4b88e"
@@ -77,22 +59,44 @@ export default class App extends React.Component {
     })
   }
 
+  handleAdicionarServicoAoCarrinho = () => {
+    const { servico, carrinho } = this.state;
+
+    const novoServico = {
+      id: servico.id,
+      titulo: servico.title,
+      preco: servico.price,
+      prazo: servico.dueDate,
+      descricao: servico.description,
+      formasDePagamento: servico.paymentMethods,
+      taken: servico.taken
+    }
+
+    const novoCarrinho = [...carrinho, novoServico]
+
+    this.setState({
+      carrinho: novoCarrinho
+    })
+
+    this.handleGetServico(servico.id)
+  }
+
   trocarPagina = () => {
-    const { paginaAtual, servico } = this.state
+    const { paginaAtual, servico, carrinho } = this.state
 
     switch (paginaAtual) {
       case "home":
-        return <Home irPraLista={this.onClickLista}/>
+        return <Home irPraLista={this.onClickLista} />
       case "carrinho":
         return <Carrinho voltar={this.onClickHome} />
       case "detalhes":
-        return <DetalhesServico getServicoAtualizado={this.handleGetServico} servico={servico} voltarLista={this.onClickLista} adicionarAoCarrinho={this.handleAdicionarServicoAoCarrinho} />
+        return <DetalhesServico carrinho={carrinho} getServicoAtualizado={this.handleGetServico} servico={servico} voltarLista={this.onClickLista} adicionarAoCarrinho={this.handleAdicionarServicoAoCarrinho} />
       case "lista":
         return <PaginaContratar salvarServico={this.onClickVerDetalhes} />
       case "paginaRegistrar":
         return <ComponentForm />
       default:
-        return <Home irPraLista={this.onClickLista}/>
+        return <Home irPraLista={this.onClickLista} />
     }
   }
 
