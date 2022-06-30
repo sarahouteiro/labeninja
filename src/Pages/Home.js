@@ -35,6 +35,7 @@ div{
 
 export default class Home extends React.Component {
   render() {
+    const { registrar, irPraLista } = this.props
     return (
       <Container>
         <GlobalStyle />
@@ -42,8 +43,8 @@ export default class Home extends React.Component {
           <p>Titulo</p>
           <div>frase</div>
           <div>
-            <button>QUERO SER UM NINJA</button>
-            <button>QUERO CONTRATAR UM NINJA</button>
+            <button onClick={registrar}>QUERO SER UM NINJA</button>
+            <button onClick={irPraLista}>QUERO CONTRATAR UM NINJA</button>
           </div>
         </Bloco>
       </Container>

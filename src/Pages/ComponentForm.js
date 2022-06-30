@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from "styled-components"
-import logo from '../assets/images/logo.png';
 import axios from 'axios'
 
 const ContainerPage = styled.div`
@@ -14,26 +13,6 @@ const ContainerPage = styled.div`
 const Container = styled.div`
   margin:0px;
 
-`
-const Header = styled.div`
-  background-color:#F5F4FC;
-  /* border:1px solid black; */
-  height:80px;
-  padding:10px;
-  
-`
-const Logo = styled.div`
-  img{
-    height:80px;    
-  }
-  button{
-    border: 0;
-    background-color:#F5F4FC;
-  }
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0px 50px;
 `
 
 const Text = styled.div`
@@ -122,12 +101,6 @@ export default class ComponentForm extends React.Component {
     console.log(this.state.inputData, this.state.inputDescricao, this.state.inputPreco, this.state.inputTitulo, this.state.inputPagamento)
     return (
       <Container>
-
-        <Header>
-          <Logo>
-            <img src={logo} alt="logo" />
-          </Logo>
-        </Header>
         <ContainerPage>
           <Text><b>Cadastre o seu serviço</b></Text>
           <Form>
