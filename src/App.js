@@ -13,7 +13,6 @@ const GlobalStyle = createGlobalStyle`
     body{
     margin:0px;
     padding:0px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
 `
 
@@ -96,6 +95,8 @@ export default class App extends React.Component {
       taken: servico.taken
     }
 
+    console.log('funcionando?')
+
     const novoCarrinho = [...carrinho, novoServico]
 
     this.setState({
@@ -128,7 +129,7 @@ export default class App extends React.Component {
       case "detalhes":
         return <DetalhesServico carrinho={carrinho} getServicoAtualizado={this.handleGetServico} servico={servico} voltarLista={this.onClickLista} adicionarAoCarrinho={this.handleAdicionarServicoAoCarrinho} />
       case "lista":
-        return <PaginaContratar salvarServico={this.onClickVerDetalhes} />
+        return <PaginaContratar funcionarCarrinho={this.handleAdicionarServicoAoCarrinho} salvarServico={this.onClickVerDetalhes} />
       case "registrar":
         return <ComponentForm />
       default:

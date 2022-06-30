@@ -26,6 +26,7 @@ const Produto = styled.div`
 
 const Container = styled.div`
   margin: 0px;
+  color: #7c65ab;
 `;
 const Total = styled.div`
   display: flex;

@@ -11,7 +11,7 @@ export const Contratar = styled.div`
         width: 200px;
         padding-left: 10px;
         border: solid 1px #7c65ab;
-        border-radius: 10px;
+        border-radius: 20px;
         background-color: #f4f5fb;
     }
     select {
@@ -21,7 +21,7 @@ export const Contratar = styled.div`
         width: 217px;
         padding-left: 10px;
         border: solid 1px #7c65ab;
-        border-radius: 10px;
+        border-radius: 20px;
         background-color: #f4f5fb;
         cursor: pointer;
     }

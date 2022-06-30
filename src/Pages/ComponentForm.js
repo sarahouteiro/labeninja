@@ -114,15 +114,19 @@ export default class ComponentForm extends React.Component {
               <Input type="number" placeholder='Preço' value={this.state.inputPreco} onChange={this.onChangePreco} />
             </label>
 
-            <label>
-              <Select multiple onChange={this.onChangePagamento}>
-                <option value="cartao de Debito" >Cartão de Débito</option>
-                <option value="Cartao de Credito" >Cartão de Crédito</option>
-                <option value="Paypal" >PayPal</option>
-                <option value="Boleto" >Boleto</option>
-                <option value="Pix">Pix</option>
-              </Select>
-            </label>
+            <div>
+                <input type='checkbox' value="cartao de Debito" onChange={this.onChangePagamento}/>
+                Cartão de Débito
+                <input type='checkbox' value="Cartao de Credito" onChange={this.onChangePagamento}/>
+                Cartão de Crédito
+                <input type='checkbox' value="Paypal" onChange={this.onChangePagamento}/>
+                Paypal
+                <input type='checkbox' value="Boleto" onChange={this.onChangePagamento}/>
+                Boleto
+                <input type='checkbox' value="Pix" onChange={this.onChangePagamento}/>
+                Pix
+            </div>
+            
             <label>
               <Input type="date" value={this.state.inputData} onChange={this.onChangeData} />
             </label>
