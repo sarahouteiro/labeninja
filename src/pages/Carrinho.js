@@ -1,113 +1,166 @@
 import React from "react";
-import styled from "styled-components"
+import styled from "styled-components";
 import axios from "axios";
-import logo from '../assets/images/logo.png'
+import logo from "../assets/images/logo.png";
+import logo2 from "../assets/images/logo2.png";
+import carrinho from "../assets/images/carrinho.png";
 
 const ContainerCarrinho = styled.div`
-  margin:0px;
-`
+  margin: 0px;
+  padding: 50px;
+  user-select: none;
+`;
 const Produto = styled.div`
-    background-color:#D3D3D3;
-    border:1px solid black;
-    margin:10px;
-    padding:35px 15px;
-    display:flex;
-    justify-content: space-between;
-`
-
+  background-color: #f5f4fb;
+  box-shadow: 2px 2px 15px #ccc;
+  max-width: 1000px;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 35px 0px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 25px;
+  padding-right: 25px;
+  align-items: center;
+  border-radius: 5px;
+`;
 
 const Container = styled.div`
-  margin:0px;
-
-`
+  margin: 0px;
+`;
 const Header = styled.div`
-  background-color:#F5F4FC;
-  /* border:1px solid black; */
-  height:80px;
-  padding:10px;
-  
-`
-const Logo = styled.div`
-  img{
-    height:80px;    
-  }  
+  background-color: #f5f4fc;
+  height: 80px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0px 50px;
-`
-
-const ButtonArea = styled.div`
-  height:80px;
-  margin-right:0px;
-  display:flex;
+  justify-content: space-around;
+  user-select: none;
+`;
+const Logo = styled.div`
+  align-self: center;
+  display: flex;
   align-items: center;
-`
+  height: 50px;
+  padding:5px 10px;
+  :hover {
+    border-radius: 5px;
+    cursor: pointer;
+    background-color:#EEECF9;
+  }
+  img {
+    height: 50px;
+  }
+`;
+const LogoTitle = styled.div`
+  color: #7c65ab;
+  font-size: 22px;
+  margin-right: 5px;
+`;
+const Carr = styled.div`
+  align-self: center;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding:10px;
+  :hover {
+    border-radius: 5px;
+    cursor: pointer;
+    background-color:#EEECF9;
+  }
+  img {
+    height: 40px;
+  }
+`;
+const Total = styled.div`
+  display: flex;
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 50px;
+  justify-content: space-around;
+  font-size: 20px;
+`;
+const Button = styled.div`
+  background-color: #7c65ab;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 5px;
+  :hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 15px #ccc;
+    background-color: #544985;
+  }
+`;
 
 export default class Carrinho extends React.Component {
+  state = {
+    produtos: [],
+  };
 
-    state = {
-        produtos: [],
-    }
+  componentDidMount() {
+    this.getJobById();
+  }
 
-    componentDidMount() {
-        this.getJobById()
-    }
+  getJobById = () => {
+    const id = "0809bf0b-fbf0-422b-b54a-065f1e5df1d8";
+    axios
+      .get(`https://labeninjas.herokuapp.com/jobs/${id}`, {
+        headers: {
+          Authorization: "e2190c39-7930-4db4-870b-bed0e5e4b88e",
+        },
+      })
+      .then((res) => {
+        this.setState({ produtos: [res.data] });
+      })
+      .catch((err) => {
+        console.log(err.response);
+      });
+  };
 
-    getJobById = () => {
-        const id = "0809bf0b-fbf0-422b-b54a-065f1e5df1d8"
-        axios.get(`https://labeninjas.herokuapp.com/jobs/${id}`, {
-            headers: {
-                Authorization: "e2190c39-7930-4db4-870b-bed0e5e4b88e"
-            }
-        }).then(res => {
-            this.setState({ produtos: [res.data] })
-        }).catch(err => {
-            console.log(err.response)
-        })
-    }
+  removerDoCarrinho = (id) => {
+    const novoCarrinho = this.state.produtos.filter((item) => {
+      return item.id !== id;
+    });
+    this.setState({ produtos: novoCarrinho });
+  };
 
-    removerDoCarrinho = (id) => {
-        const novoCarrinho = this.state.produtos.filter((item) => {
-            return item.id !== id
-        })
-        this.setState({ produtos: novoCarrinho })
-    }
+  finalizarCompra = () => {
+    alert("Obrigada por comprar com a gente!");
+  };
 
-    render() {
-        const produto = this.state.produtos.map((p) => {
-            return (
-                <Produto key={p.id}>
-                    <div>{p.title}</div>
-                    <div>{`R$${p.price}.00`}</div>
-                    <button onClick={() => this.removerDoCarrinho(p.id)}>Remover</button>
-                </Produto>
-            )
-        })
-        return (
-            <Container>
-                
-                <Header>
-                    <Logo>
-                        <img src={logo} alt="logo" />
-                        {/* <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" class="bi bi-cart" viewBox="0 0 16 16">
-                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                            </svg>
-                        </button> */}
-                        <ButtonArea>                            
-                            <button>Voltar</button>
-                        </ButtonArea>
-                    </Logo>
-                </Header>
-                <ContainerCarrinho>
-                    {produto}
-                    <span>{`Total: R$00.00`}</span>
-                    <button>Finalizar Compra</button>                    
-                </ContainerCarrinho>
-            </Container>
+  render() {
+    const produto = this.state.produtos.map((p) => {
+      return (
+        <Produto key={p.id}>
+          <div>{p.title}</div>
+          <div>{`R$${p.price}.00`}</div>
+          <Button onClick={() => this.removerDoCarrinho(p.id)}>Remover</Button>
+        </Produto>
+      );
+    });
 
-        )
-    }
+    let total = 0;
+    this.state.produtos.forEach((item) => {
+      total += item.price;
+    });
+
+    return (
+      <Container>
+        <Header>
+          <Logo>
+            <img src={logo2} />
+            <LogoTitle>LabeNinja</LogoTitle>
+          </Logo>
+          <Carr>
+            <img src={carrinho} />
+          </Carr>
+        </Header>
+        <ContainerCarrinho>
+          {produto}
+          <Total>
+            <span>{`Total: R$${total},00`}</span>
+            <Button onClick={this.finalizarCompra}>Finalizar Compra</Button>
+          </Total>
+        </ContainerCarrinho>
+      </Container>
+    );
+  }
 }
-
