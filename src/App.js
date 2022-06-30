@@ -1,6 +1,6 @@
 import React from "react";
 import PaginaContratar from "./Pages/PaginaContratar";
-import ComponentForm from "./components/RegistrationPage";
+import ComponentForm from "./Pages/ComponentForm";
 import DetalhesServico from "./Pages/detalhesServico";
 import Carrinho from "./Pages/Carrinho"
 import styled, { createGlobalStyle } from "styled-components";
@@ -94,17 +94,17 @@ export default class App extends React.Component {
 
     switch (paginaAtual) {
       case "home":
-        return <Home irPraLista={this.onClickLista} />
+        return <Home registrar={this.onClickRegistrar} irPraLista={this.onClickLista} />
       case "carrinho":
         return <Carrinho voltar={this.onClickHome} />
       case "detalhes":
         return <DetalhesServico carrinho={carrinho} getServicoAtualizado={this.handleGetServico} servico={servico} voltarLista={this.onClickLista} adicionarAoCarrinho={this.handleAdicionarServicoAoCarrinho} />
       case "lista":
         return <PaginaContratar salvarServico={this.onClickVerDetalhes} />
-      case "paginaRegistrar":
+      case "registrar":
         return <ComponentForm />
       default:
-        return <Home irPraLista={this.onClickLista} />
+        return <Home registrar={this.onClickRegistrar} irPraLista={this.onClickLista} />
     }
   }
 
@@ -118,6 +118,10 @@ export default class App extends React.Component {
 
   onClickLista = () => {
     this.setState({ paginaAtual: "lista" })
+  }
+
+  onClickRegistrar = () => {
+    this.setState({ paginaAtual: "registrar" })
   }
 
   onClickVerDetalhes = (servico) => {
