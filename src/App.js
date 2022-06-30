@@ -60,7 +60,6 @@ const Carr = styled.div`
   }
 `;
 
-
 export default class App extends React.Component {
   state = {
     paginaAtual: "home",
