@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components"
 import axios from "axios";
-import { createGlobalStyle } from "styled-components";
 import logo from '../assets/images/logo.png'
 
 const ContainerCarrinho = styled.div`
@@ -16,14 +15,7 @@ const Produto = styled.div`
     justify-content: space-between;
 `
 
-const GlobalStyle = createGlobalStyle`
-    body{
-    margin:0px;
-    padding:0px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:white;    
-  }
-`
+
 const Container = styled.div`
   margin:0px;
 
@@ -110,7 +102,7 @@ export default class Carrinho extends React.Component {
                 </Header>
                 <ContainerCarrinho>
                     {produto}
-                    <span>{`Total: (FUNÇÀO TOTAL)`}</span>
+                    <span>{`Total: R$00.00`}</span>
                     <button>Finalizar Compra</button>                    
                 </ContainerCarrinho>
             </Container>
