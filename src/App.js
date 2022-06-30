@@ -72,11 +72,11 @@ export default class App extends React.Component {
 
     const novoServico = {
       id: servico.id,
-      titulo: servico.title,
-      preco: servico.price,
-      prazo: servico.dueDate,
-      descricao: servico.description,
-      formasDePagamento: servico.paymentMethods,
+      title: servico.title,
+      price: servico.price,
+      dueDate: servico.dueDate,
+      description: servico.description,
+      paymentMethods: servico.paymentMethods,
       taken: servico.taken
     }
 
@@ -89,6 +89,18 @@ export default class App extends React.Component {
     this.handleGetServico(servico.id)
   }
 
+  handleRemoverDoCarrinho = (id) => {
+    const { carrinho } = this.state;
+    
+    const newCarrinho = carrinho.filter((item) => {
+      return item.id !== id
+    })
+
+    this.setState({
+      carrinho: newCarrinho
+    })
+  }
+
   trocarPagina = () => {
     const { paginaAtual, servico, carrinho } = this.state
 
@@ -96,7 +108,7 @@ export default class App extends React.Component {
       case "home":
         return <Home registrar={this.onClickRegistrar} irPraLista={this.onClickLista} />
       case "carrinho":
-        return <Carrinho voltar={this.onClickHome} />
+        return <Carrinho carrinho={carrinho} removerDoCarrinho={this.handleRemoverDoCarrinho}/>
       case "detalhes":
         return <DetalhesServico carrinho={carrinho} getServicoAtualizado={this.handleGetServico} servico={servico} voltarLista={this.onClickLista} adicionarAoCarrinho={this.handleAdicionarServicoAoCarrinho} />
       case "lista":
