@@ -13,12 +13,16 @@ class DetalhesServico extends Component {
         const body = {
             taken: taken
         }
-        
-        await axios.post(`https://labeninjas.herokuapp.com/jobs/${id}`, body, {
-            headers: {
-                Authorization: "e2190c39-7930-4db4-870b-bed0e5e4b88e"
-            }
-        })
+
+        try {
+            await axios.post(`https://labeninjas.herokuapp.com/jobs/${id}`, body, {
+                headers: {
+                    Authorization: "e2190c39-7930-4db4-870b-bed0e5e4b88e"
+                }
+            })
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     handleVerificarSeTemNoCarrinho = () => {
@@ -52,7 +56,7 @@ class DetalhesServico extends Component {
         const confirmation = window.confirm("Quer adicionar esse serviço ao carrinho?");
 
         if(!confirmation) return;
-        
+
         await this.handleTrocarStatus(servico.id, true)
 
         adicionarAoCarrinho()

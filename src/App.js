@@ -52,15 +52,19 @@ export default class App extends React.Component {
 
   handleGetServico = async (id) => {
 
-    const response = await axios.get(`https://labeninjas.herokuapp.com/jobs/${id}`, {
-      headers: {
-        Authorization: "e2190c39-7930-4db4-870b-bed0e5e4b88e"
-      }
-    })
+    try {
+      const response = await axios.get(`https://labeninjas.herokuapp.com/jobs/${id}`, {
+        headers: {
+          Authorization: "e2190c39-7930-4db4-870b-bed0e5e4b88e"
+        }
+      })
 
-    this.setState({
-      servico: response.data
-    })
+      this.setState({
+        servico: response.data
+      })
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   handleAdicionarServicoAoCarrinho = () => {
