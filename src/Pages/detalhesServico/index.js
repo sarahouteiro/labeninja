@@ -59,7 +59,7 @@ class DetalhesServico extends Component {
 
         await this.handleTrocarStatus(servico.id, true)
 
-        adicionarAoCarrinho()
+        adicionarAoCarrinho(servico)
         
     }
 

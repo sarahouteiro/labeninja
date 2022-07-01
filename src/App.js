@@ -140,7 +140,7 @@ export default class App extends React.Component {
       case "carrinho":
         return <Carrinho carrinho={this.state.carrinho} removerDoCarrinho={this.handleRemoverDoCarrinho} finalizarCompra={this.handleFinalizarCompra}/>
       case "detalhes":
-        return <DetalhesServico carrinho={carrinho} getServicoAtualizado={this.handleGetServico} servico={servico} voltarLista={this.onClickLista}/>
+        return <DetalhesServico adicionarAoCarrinho={this.adicionarAoCarrinho} carrinho={carrinho} getServicoAtualizado={this.handleGetServico} servico={servico} voltarLista={this.onClickLista}/>
       case "lista":
         return <PaginaContratar adicionarAoCarrinho={this.adicionarAoCarrinho} salvarServico={this.onClickVerDetalhes} />
       case "registrar":
