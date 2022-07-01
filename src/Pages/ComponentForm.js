@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from "styled-components"
 import axios from 'axios'
-import { Checkbox } from '@mui/material';
 
 const ContainerPage = styled.div`
   display: flex;
