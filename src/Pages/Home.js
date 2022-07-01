@@ -21,7 +21,7 @@ display: flex;
 flex-direction: column;
 color: black;
 height: 70vh;
-justify-content: end;
+justify-content: center;
 align-items: center;
 color: #7c65ab;
 button{
@@ -30,7 +30,9 @@ button{
   border: none;
   border-radius: 5px;
   padding: 10px;
-  margin:20px 60px;
+  margin-left:25px;
+  margin-right:25px;
+  margin-bottom:20px;
   transition: all 0.5s ease-in-out;
   &:hover {
     box-shadow: 2px 2px 15px #ccc;
@@ -39,10 +41,12 @@ button{
   }
 }
 div{
-  margin: 50px;
+  margin-top:50px;
+  display:flex;
+  @media (max-width:490px){
+    flex-direction:column;
+  }
 }
-
-
 `
 
 export default class Home extends React.Component {

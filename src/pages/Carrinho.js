@@ -20,7 +20,7 @@ const CarrinhoVazio = styled.div`
   p{
     margin-left:50px;
   }
-  @media (max-width:475px){
+  @media (max-width:650px){
     font-size:30px;
     img{
     height:150px;
@@ -64,6 +64,23 @@ const Total = styled.div`
   justify-content: space-around;
   font-size: 20px;
 
+  div{
+    background-color: #7c65ab;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    min-width:150px;
+    :hover {
+      cursor: pointer;
+      box-shadow: 2px 2px 15px #ccc;
+      background-color: #544985;
+    }
+
+    @media (max-width:475px){
+      margin-top:10px;
+    }
+  }
+
   @media (max-width:475px){
     flex-direction: column;
     justify-content:center;
@@ -83,7 +100,6 @@ const Button = styled.div`
 
   @media (max-width:475px){
     margin-top:10px;
-    max-width:150px;
   }
 `;
 
@@ -132,7 +148,7 @@ export default class Carrinho extends React.Component {
           {servicosAdicionados}
           <Total>
             <span>{`Total: R$${this.handleGetTotal()}`}</span>
-            <Button onClick={finalizarCompra}>Finalizar Compra</Button>
+            <div onClick={finalizarCompra}>Finalizar Compra</div>
           </Total>
         </ContainerCarrinho>
         }
