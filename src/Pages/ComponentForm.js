@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components"
 import axios from 'axios'
+import { Checkbox } from '@mui/material';
 
 const ContainerPage = styled.div`
   display: flex;
@@ -66,7 +67,16 @@ export default class ComponentForm extends React.Component {
   onChangePagamento = (ev) => {
     if (!(this.state.inputPagamento.includes(ev.target.value))) {
       this.setState({ inputPagamento: [...this.state.inputPagamento, ev.target.value] })
-    }
+    } else if (this.state.inputPagamento.includes(ev.target.value)) {
+      let indice = this.state.inputPagamento.indexOf(ev.target.value)
+      let novoArray = this.state.inputPagamento.splice(indice,1)
+      let novoPagamento = this.state.inputPagamento.map((a) => {
+        if (a !== novoArray[0]) {
+          return a
+        }
+      })      
+      this.setState({inputPagamento: [...novoPagamento]})
+     }    
   }
 
   onChangeData = (ev) => {
@@ -115,10 +125,10 @@ export default class ComponentForm extends React.Component {
             </label>
 
             <div>
-                <input id='debito' type='checkbox' value="cartao de Debito" onChange={this.onChangePagamento}/>
+                <input id='debito' type='checkbox' value="Cartao de Debito"  onChange={this.onChangePagamento}  />
                 <label for="debito">Cartão de Débito</label>
 
-                <input id='credito'type='checkbox' value="Cartao de Credito" onChange={this.onChangePagamento}/>
+                <input id='credito'type='checkbox' value="Cartao de Credito" onChange={this.onChangePagamento} />
                 <label for="credito">Cartão de Crédito</label>
 
                 <input id='paypal' type='checkbox' value="Paypal" onChange={this.onChangePagamento}/>
