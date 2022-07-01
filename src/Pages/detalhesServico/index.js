@@ -80,7 +80,7 @@ class DetalhesServico extends Component {
         return (
             <DetalhesContainer>
                 <h1>{servico.title}</h1>
-                <p>Aceita: {this.handleRenderFormasDePagamento()}</p>
+                <div><p>Aceita: {this.handleRenderFormasDePagamento()}</p></div>
                 <p>Até {this.handleFormatarData(servico.dueDate)} por <b>{this.handleFormatarPreco(servico.price)}</b></p>
                 <p>{servico.description}</p>
                 <button className= {`${servico.taken ? "disabled" :""}`} onClick={() => this.handleAdicionarAoCarrinho()} disabled={servico.taken}>Adicionar ao carinho</button>
