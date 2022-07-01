@@ -16,21 +16,28 @@ const Container = styled.div`
 `
 
 const Text = styled.div`
-    color: black;
+    color: #7c65ab;
     margin-top: 40px;
-
+    font-size: x-large;
 `
 const Form = styled.form`
     padding: 5px;
-    width: 30%;
+    width: 35%;   
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-content: center;
+    background-color: #F5F4FC;
+    border-radius: 10px;
 `
 const Input = styled.input`
-    width: 100%;
+    width: 93%;
+    height: 3vh;
     margin: 5px;
+    border-radius: 10px;
+    border: 0;
+    align-items: baseline; 
+    
 `
 
 const Select = styled.select`
@@ -39,8 +46,18 @@ const Select = styled.select`
     margin: 5px;
 `
 const Cadastro = styled.button`
-    display: flex;
-    align-content: center;
+    background-color: #7c65ab;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin:20px 60px;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    box-shadow: 2px 2px 15px #ccc;
+    background-color: #544985;
+    cursor: pointer;
+  }
 `
 export default class ComponentForm extends React.Component {
   state = {
@@ -112,6 +129,7 @@ export default class ComponentForm extends React.Component {
       <Container>
         <ContainerPage>
           <Text><b>Cadastre o seu serviço</b></Text>
+          <br/><br/>
           <Form>
             <label>
               <Input type="text" placeholder='Titulo' value={this.state.inputTitulo} onChange={this.onChangeTitulo} />
