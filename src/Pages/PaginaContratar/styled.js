@@ -35,8 +35,8 @@ export const Contratar = styled.div`
     }
 `
 export const Container = styled.div`
-  margin:0px;
-
+  margin:0 auto;
+  max-width: 1500px;
 `
 export const Header = styled.div`
   background-color:#F5F4FC;
@@ -62,7 +62,9 @@ export const GridServicos = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    column-gap: 20px;
+    column-gap: 40px;
+    row-gap: 40px;
+    margin-top: 50px;
     @media (max-width: 560px) {
         display: grid;
         grid-template-columns: 1fr;

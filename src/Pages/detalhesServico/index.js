@@ -17,7 +17,7 @@ class DetalhesServico extends Component {
         try {
             await axios.post(`https://labeninjas.herokuapp.com/jobs/${id}`, body, {
                 headers: {
-                    Authorization: "e2190c39-7930-4db4-870b-bed0e5e4b88e"
+                    Authorization: "a3ec4097-49f2-4d14-a000-3955659ffee9"
                 }
             })
         } catch (error) {
