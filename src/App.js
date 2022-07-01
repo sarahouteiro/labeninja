@@ -8,6 +8,7 @@ import axios from 'axios'
 import Home from "./Pages/Home";
 import logo from "./assets/images/logo2.png"
 import carrinho from "./assets/images/carrinho.png"
+import voltar from "./assets/images/voltar.png"
 
 const GlobalStyle = createGlobalStyle`
     body{
@@ -190,7 +191,7 @@ export default class App extends React.Component {
             {paginaAtual !== "carrinho" ? <div onClick={this.onClickCarrinho}>
             <Span numeroItens={this.state.carrinho.length}>{this.state.carrinho.length}</Span>
             <img src={carrinho} alt="icone carrinho"/>
-            </div> : <button onClick={this.onClickLista}>Voltar</button>}
+            </div> : <img src={voltar} onClick={this.onClickLista}/>}
           </Carr>
         </Header>
         {this.trocarPagina()}
