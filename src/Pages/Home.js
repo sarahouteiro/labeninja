@@ -53,7 +53,7 @@ export default class Home extends React.Component {
         <GlobalStyle />
         <Bloco>
           <h1>LabeNinja</h1>
-          <img src={logo}/>
+          <img src={logo} alt="logo"/>
           <h3>O talento certo no momento certo</h3>
           <div>
             <button onClick={registrar}>QUERO SER UM NINJA</button>
