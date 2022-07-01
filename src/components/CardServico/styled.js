@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const CardsServico = styled.div`
-    margin: 20px;
-    margin-top: 50px;
+    /* margin: 20px;
+    margin-top: 50px; */
     border-radius: 5px;
     background-color: #f5f4fb;
-    width: 300px;
+    width: auto;
     padding: 20px;
     text-align: left;
     color: #7c65ab;
