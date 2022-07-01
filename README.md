@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+<h1 align="center">
+LabeNinjas<br/><br/>
+<img src="https://user-images.githubusercontent.com/45954874/176879447-d1a929cb-e062-4bd0-8a19-64a2527ac031.png"/> 
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/future4code/Freire-labe-ninja4">
 
-## Available Scripts
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/future4code/Freire-labe-ninja4">
 
-In the project directory, you can run:
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/future4code/Freire-labe-ninja4">
 
-### `npm start`
+  <img alt="Repository issues" src="https://img.shields.io/github/issues/future4code/Freire-labe-ninja4">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
+</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p align="center">
+  <a href="#Tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+   <a href="#Projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#Instalação">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#Imagens">Imagens</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#Licença">Licença</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+</p>
 
-### `npm test`
+<a id="Tecnologias"></a>
+## 🚀 Tecnologias 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-### `npm run build`
+- HTML, CSS, Javascript
+- React.js
+- Styled Components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<a id="Projeto"></a>
+## 💻 Projeto
+  Este projeto foi desenvolvido com base no curso  *__Web Full Stack Integral__* da [Labenu](https://www.labenu.com.br/). Esta aplicação consiste em uma plataforma de Marketplace baseada no site GetNinjas. O projeto possui duas áreas principais separadas no site (Prestador de serviço) e (Contratante), busca e listagem de serviços, página de detalhes de cada serviço, e carrinho onde é possível adicionar e remover propostas para contratá-las.
+  
+<a id="Instalação"></a>
+## Instalação
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Faça o dowload e extração do projeto;
+2. Abra um terminal ([Git Bash](https://git-scm.com/book/pt-pt/v2/Appendix-A%3A-Git-em-Outros-Ambientes-Git-in-Bash) é o recomendado, pois é colorido);
+3. Navegue até a pasta do projeto pelo seu terminal;
+4. Execute, dentro dela, o comando **npm install**;
+5. Quando acabar, rode o comando **npm run start**;
+6. Verifique se uma janela do seu navegador abriu, mostrando a página do projeto.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<a id="Imagens"></a>
+## 🖼️ Imagens
 
-### `npm run eject`
+| Tela Inicial  | Cadastro de Serviço | Busca de Serviços | 
+|---|---|---|
+| ![Tela Inicial](https://user-images.githubusercontent.com/45954874/176905184-0b59c220-b853-42c5-b0dc-4dc9ede6733a.jpg) | ![Cadastro de Serviço](https://user-images.githubusercontent.com/45954874/176905802-d097aad3-f1a0-4d4c-ba47-c97e4ececf08.jpg) | ![Busca de Serviços](https://user-images.githubusercontent.com/45954874/176905885-83f163b4-dad1-4336-9a82-c7140b40a538.jpg) | 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Detalhes do Serviço  | Carrinho Vazio | Carrinho Cheio | 
+|---|---|---|
+| ![Detalhes do Serviço](https://user-images.githubusercontent.com/45954874/176906021-c9bd0e07-6790-428f-92be-4ed262cb1ed2.jpg) | ![Carrinho](https://user-images.githubusercontent.com/45954874/176906086-7bddd166-9cd4-41c3-a4fd-531945b32728.jpg) | ![Carrinho](https://user-images.githubusercontent.com/45954874/176906086-7bddd166-9cd4-41c3-a4fd-531945b32728.jpg) | 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<a id="Licença"></a>
+## 📝 Licença
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/future4code/Freire-labe-ninja4/blob/master/LICENCE) para mais detalhes.
