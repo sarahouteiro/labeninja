@@ -47,8 +47,12 @@ const Carr = styled.div`
   align-self: center;
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 40px;
   padding:10px;
+  div{
+    display:flex;
+  }
   :hover {
     border-radius: 5px;
     cursor: pointer;
@@ -58,6 +62,20 @@ const Carr = styled.div`
     height: 40px;
   }
 `;
+const Span = styled.span`
+  color:#7c65ab;
+  background-color:#EEECF9;
+  padding:10px;
+  border-radius:50%;
+  ${(props) => {
+    if(props.numeroItens === 0){
+      return 'display:none'
+    }
+    else{
+      return 'display:block'
+    }
+  }}
+`
 
 export default class App extends React.Component {
   state = {
@@ -82,28 +100,10 @@ export default class App extends React.Component {
     }
   }
 
-  handleAdicionarServicoAoCarrinho = () => {
-    const { servico, carrinho } = this.state;
-
-    const novoServico = {
-      id: servico.id,
-      title: servico.title,
-      price: servico.price,
-      dueDate: servico.dueDate,
-      description: servico.description,
-      paymentMethods: servico.paymentMethods,
-      taken: servico.taken
-    }
-
-    console.log('funcionando?')
-
-    const novoCarrinho = [...carrinho, novoServico]
-
-    this.setState({
-      carrinho: novoCarrinho
-    })
-
-    this.handleGetServico(servico.id)
+  adicionarAoCarrinho = (job) => {
+    const novoServico = [...this.state.carrinho, job]
+    this.setState({carrinho: novoServico})
+    alert(`O serviço ${job.title} foi adicionado ao carrinho`)
   }
 
   handleRemoverDoCarrinho = (id) => {
@@ -137,11 +137,11 @@ export default class App extends React.Component {
       case "home":
         return <Home registrar={this.onClickRegistrar} irPraLista={this.onClickLista} />
       case "carrinho":
-        return <Carrinho carrinho={carrinho} removerDoCarrinho={this.handleRemoverDoCarrinho} finalizarCompra={this.handleFinalizarCompra}/>
+        return <Carrinho carrinho={this.state.carrinho} removerDoCarrinho={this.handleRemoverDoCarrinho} finalizarCompra={this.handleFinalizarCompra}/>
       case "detalhes":
-        return <DetalhesServico carrinho={carrinho} getServicoAtualizado={this.handleGetServico} servico={servico} voltarLista={this.onClickLista} adicionarAoCarrinho={this.handleAdicionarServicoAoCarrinho} />
+        return <DetalhesServico carrinho={carrinho} getServicoAtualizado={this.handleGetServico} servico={servico} voltarLista={this.onClickLista}/>
       case "lista":
-        return <PaginaContratar funcionarCarrinho={this.handleAdicionarServicoAoCarrinho} salvarServico={this.onClickVerDetalhes} />
+        return <PaginaContratar adicionarAoCarrinho={this.adicionarAoCarrinho} salvarServico={this.onClickVerDetalhes} />
       case "registrar":
         return <ComponentForm />
       default:
@@ -188,6 +188,7 @@ export default class App extends React.Component {
           </Logo>
           <Carr>
             {paginaAtual !== "carrinho" ? <div onClick={this.onClickCarrinho}>
+            <Span numeroItens={this.state.carrinho.length}>{this.state.carrinho.length}</Span>
             <img src={carrinho} alt="icone carrinho"/>
             </div> : <button onClick={this.onClickLista}>Voltar</button>}
           </Carr>

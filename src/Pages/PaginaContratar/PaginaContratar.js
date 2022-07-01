@@ -117,7 +117,7 @@ export default class PaginaContratar extends React.Component {
                   }
                 })
                 .map((job) => {
-                  return <CardServico key={job.id} verDetalhes={() => this.handleSalvarServico(job)} jobInfos={job} />
+                  return <CardServico key={job.id} verDetalhes={() => this.handleSalvarServico(job)} jobInfos={job} adicionarAoCarrinho={this.props.adicionarAoCarrinho}/>
                 })}
             </GridServicos>
           </div>

@@ -66,7 +66,7 @@ export default class Carrinho extends React.Component {
 
   render() {
     const { carrinho, finalizarCompra } = this.props
-    const produto = carrinho.map((p) => {
+    const servicosAdicionados = this.props.carrinho.map((p) => {
       return (
         <Produto key={p.id}>
           <div>{p.title}</div>
@@ -79,7 +79,7 @@ export default class Carrinho extends React.Component {
     return (
       <Container>
         <ContainerCarrinho>
-          {produto}
+          {servicosAdicionados}
           <Total>
             <span>{`Total: R$${this.handleGetTotal()}`}</span>
             <Button onClick={finalizarCompra}>Finalizar Compra</Button>
