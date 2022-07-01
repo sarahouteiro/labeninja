@@ -35,7 +35,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 <a id="Projeto"></a>
 ## 💻 Projeto
   Este projeto foi desenvolvido com base no curso  *__Web Full Stack Integral__* da [Labenu](https://www.labenu.com.br/). Esta aplicação consiste em uma plataforma de Marketplace baseada no site GetNinjas. O projeto possui duas áreas principais separadas no site (Prestador de serviço) e (Contratante), busca e listagem de serviços, página de detalhes de cada serviço, e carrinho onde é possível adicionar e remover propostas para contratá-las.
-## Link surge - ajar-garden.surge.sh
+## [Link surge - ](ajar-garden.surge.sh)
   
 <a id="Instalação"></a>
 ## 🥷 Instalação
