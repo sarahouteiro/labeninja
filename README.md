@@ -35,7 +35,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 <a id="Projeto"></a>
 ## 💻 Projeto
   Este projeto foi desenvolvido com base no curso  *__Web Full Stack Integral__* da [Labenu](https://www.labenu.com.br/). Esta aplicação consiste em uma plataforma de Marketplace baseada no site GetNinjas. O projeto possui duas áreas principais separadas no site (Prestador de serviço) e (Contratante), busca e listagem de serviços, página de detalhes de cada serviço, e carrinho onde é possível adicionar e remover propostas para contratá-las.
-## [Link surge - ](ajar-garden.surge.sh)
+## Link surge - [ajar-garden.surge.sh](https://ajar-garden.surge.sh)
   
 <a id="Instalação"></a>
 ## 🥷 Instalação
@@ -52,11 +52,11 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 | Tela Inicial  | Cadastro de Serviço | Busca de Serviços | 
 |---|---|---|
-| ![Tela Inicial](https://user-images.githubusercontent.com/45954874/176905184-0b59c220-b853-42c5-b0dc-4dc9ede6733a.jpg) | ![Cadastro de Serviço](https://user-images.githubusercontent.com/45954874/176905802-d097aad3-f1a0-4d4c-ba47-c97e4ececf08.jpg) | ![Busca de Serviços](https://user-images.githubusercontent.com/45954874/176905885-83f163b4-dad1-4336-9a82-c7140b40a538.jpg) | 
+| ![Tela Inicial](https://user-images.githubusercontent.com/45954874/176905184-0b59c220-b853-42c5-b0dc-4dc9ede6733a.jpg) | ![Cadastro de Serviço](https://user-images.githubusercontent.com/45954874/176949715-bb573766-df09-49ad-9526-407fd95915ed.jpg) | ![Busca de Serviços](https://user-images.githubusercontent.com/45954874/176949780-a73de3fd-29d9-4ea5-9dc9-7d860a934573.jpg) | 
 
 | Detalhes do Serviço  | Carrinho Vazio | Carrinho Cheio | 
 |---|---|---|
-| ![Detalhes do Serviço](https://user-images.githubusercontent.com/45954874/176906021-c9bd0e07-6790-428f-92be-4ed262cb1ed2.jpg) | ![Carrinho](https://user-images.githubusercontent.com/45954874/176906086-7bddd166-9cd4-41c3-a4fd-531945b32728.jpg) | ![Carrinho](https://user-images.githubusercontent.com/45954874/176906086-7bddd166-9cd4-41c3-a4fd-531945b32728.jpg) | 
+| ![Detalhes do Serviço](https://user-images.githubusercontent.com/45954874/176906021-c9bd0e07-6790-428f-92be-4ed262cb1ed2.jpg) | ![Carrinho Vazio](https://user-images.githubusercontent.com/45954874/176949824-c370475f-c4f2-48c8-8451-1d1340aed045.jpg) | ![Carrinho Cheio](https://user-images.githubusercontent.com/45954874/176949872-f65a2951-0865-4e19-94e9-e1530314fd56.jpg) | 
 
 <a id="Licença"></a>
 ## 📝 Licença
