@@ -1,11 +1,26 @@
 import React from "react";
 import styled from "styled-components";
+import carrinhoVazio from "../assets/images/carrinho-vazio.png"
 
 const ContainerCarrinho = styled.div`
   margin: 0px;
   padding: 50px;
   user-select: none;
 `;
+const CarrinhoVazio = styled.div`
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  font-size:50px;
+  padding-top:100px;
+  img{
+    height:400px;
+  }
+  p{
+    margin-left:50px;
+  }
+`
 const Produto = styled.div`
   background-color: #f5f4fb;
   box-shadow: 2px 2px 15px #ccc;
@@ -78,6 +93,14 @@ export default class Carrinho extends React.Component {
 
     return (
       <Container>
+        {this.props.carrinho.length === 0 ?
+        <ContainerCarrinho>
+          <CarrinhoVazio>
+            <img src={carrinhoVazio} alt="carrinho-vazio"/>
+            <p>Seu carrinho está vazio!</p>
+          </CarrinhoVazio>
+        </ContainerCarrinho>
+        :
         <ContainerCarrinho>
           {servicosAdicionados}
           <Total>
@@ -85,6 +108,8 @@ export default class Carrinho extends React.Component {
             <Button onClick={finalizarCompra}>Finalizar Compra</Button>
           </Total>
         </ContainerCarrinho>
+        }
+        
       </Container>
     );
   }
