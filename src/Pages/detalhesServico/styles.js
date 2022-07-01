@@ -12,6 +12,18 @@ export const DetalhesContainer = styled.div`
         color: #7869BF;
     }
 
+    div {
+        display:flex;
+        flex-wrap: wrap;
+        justify-content:center;
+        text-align:center;
+        line-height:30px;
+    }
+
+    p {
+        text-align:center;
+    }
+
     span {
         height: 28px;
         background-color: #7869BF;
@@ -20,6 +32,8 @@ export const DetalhesContainer = styled.div`
         border-radius: 16px;
         padding: 5px 12px;
         margin: 0 4px;
+        margin-top:5px;
+        display:inline-block;
     }
 
     button {
@@ -40,6 +54,9 @@ export const DetalhesContainer = styled.div`
         :hover {
             border: 1px solid rgb(84, 73, 133);
             background-color: rgba(120, 105, 191, 0.04);
+        }
+        @media (max-width:370px){
+            width: 300px;
         }
     }
 

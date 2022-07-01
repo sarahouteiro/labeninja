@@ -20,6 +20,12 @@ const CarrinhoVazio = styled.div`
   p{
     margin-left:50px;
   }
+  @media (max-width:475px){
+    font-size:30px;
+    img{
+    height:150px;
+  }
+  }
 `
 const Produto = styled.div`
   background-color: #f5f4fb;
@@ -34,6 +40,16 @@ const Produto = styled.div`
   padding-right: 25px;
   align-items: center;
   border-radius: 5px;
+  div{
+    margin:0px 10px;
+  }
+
+  @media (max-width:475px){
+    flex-direction: column;
+    div{
+      margin-bottom:5px;
+    }
+  }
 `;
 
 const Container = styled.div`
@@ -47,6 +63,12 @@ const Total = styled.div`
   margin-top: 50px;
   justify-content: space-around;
   font-size: 20px;
+
+  @media (max-width:475px){
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+  }
 `;
 const Button = styled.div`
   background-color: #7c65ab;
@@ -57,6 +79,11 @@ const Button = styled.div`
     cursor: pointer;
     box-shadow: 2px 2px 15px #ccc;
     background-color: #544985;
+  }
+
+  @media (max-width:475px){
+    margin-top:10px;
+    max-width:150px;
   }
 `;
 
