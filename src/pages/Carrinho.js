@@ -107,7 +107,7 @@ export default class Carrinho extends React.Component {
   }
 
   render() {
-    const { carrinho, finalizarCompra } = this.props
+    const { finalizarCompra } = this.props
     const servicosAdicionados = this.props.carrinho.map((p) => {
       return (
         <Produto key={p.id}>

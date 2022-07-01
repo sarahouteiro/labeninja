@@ -191,7 +191,7 @@ export default class App extends React.Component {
             {paginaAtual !== "carrinho" ? <div onClick={this.onClickCarrinho}>
             <Span numeroItens={this.state.carrinho.length}>{this.state.carrinho.length}</Span>
             <img src={carrinho} alt="icone carrinho"/>
-            </div> : <img src={voltar} onClick={this.onClickLista}/>}
+            </div> : <img src={voltar} onClick={this.onClickLista} alt="carrinho"/>}
           </Carr>
         </Header>
         {this.trocarPagina()}
