@@ -37,7 +37,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
   Este projeto foi desenvolvido com base no curso  *__Web Full Stack Integral__* da [Labenu](https://www.labenu.com.br/). Esta aplicação consiste em uma plataforma de Marketplace baseada no site GetNinjas. O projeto possui duas áreas principais separadas no site (Prestador de serviço) e (Contratante), busca e listagem de serviços, página de detalhes de cada serviço, e carrinho onde é possível adicionar e remover propostas para contratá-las.
   
 <a id="Instalação"></a>
-## Instalação
+## 🥷 Instalação
 
 1. Faça o dowload e extração do projeto;
 2. Abra um terminal ([Git Bash](https://git-scm.com/book/pt-pt/v2/Appendix-A%3A-Git-em-Outros-Ambientes-Git-in-Bash) é o recomendado, pois é colorido);
