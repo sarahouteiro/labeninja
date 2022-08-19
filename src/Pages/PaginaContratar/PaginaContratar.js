@@ -2,7 +2,8 @@ import React from "react";
 import {
   Contratar,
   Container,
-  GridServicos
+  GridServicos,
+  Loading
 } from "./styled";
 import CardServico from '../../components/CardServico/CardServico'
 import { key, url } from '../../utils/constants'
@@ -91,6 +92,7 @@ export default class PaginaContratar extends React.Component {
               <option value='title'>Título</option>
               <option value='dueData'>Prazo</option>
             </select>
+            {this.state.jobs.length === 0 && <Loading>Carregando...</Loading>}
             <GridServicos>
               {this.state.jobs
                 .filter((job) => {

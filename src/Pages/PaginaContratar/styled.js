@@ -71,3 +71,8 @@ export const GridServicos = styled.div`
         justify-items: center;
     }
 `
+
+export const Loading = styled.p`
+  margin-top: 50px;
+  color: #7C65AB;
+`
